@@ -18,7 +18,7 @@ Exercise 1. Attacking AMM by arbitrage
 
 Suppose there are two DEX pools, OttoSwap and CuseSwap, each of which maintains the same tokens, `TokenX` and `TokenY`. For instance, OttoSwap stores $3$ units of `TokenX` and $1$ units of `TokenY`. CuseSwap stores $1$ units of `TokenX` and $4$ units of `TokenY`.
 
-An adversary, Malloy, can conduct an arbitrage across the two pools to extract positive profit. For instance, Malloy can swap $1$ `TokenX` for $dy$ units of `TokenY` on CuseSwap. Through the constant product function, we can have $dy=2$. Malloy can then swap $2$ `TokenY` for $dx$ units of `TokenX` on OttoSwap. Again, through the constant product function, we can obtain $dx=2$. Thus, after these two swaps, Malloy can extract a profit of $dx-1=1$ unit of `TokenX`.
+An adversary, Malloy, can conduct an arbitrage across the two pools to extract positive profit. For instance, Malloy can swap $1$ `TokenX` for $dy$ units of `TokenY` on CuseSwap. Through the constant product function, we can have $dy=2$. Malloy can then swap $2$ `TokenY` for $dx$ units of `TokenX` on OttoSwap . Again, through the constant product function, we can obtain $dx=2$. Thus, after these two swaps, Malloy can extract a profit of $dx-1=1$ unit of `TokenX`.
 
 In practice, while Malloy can carry out the two swap calls in two separate transactions, there is a risk of one transaction succeeding and the other failing. In that case, Malloy may miss the timing/opportunity of extracting positive profit. Thus, Malloy wants to run the two swaps in a delegated smart contract. The system architecture is depicted in the figure below.
 
